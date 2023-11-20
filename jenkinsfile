@@ -1,6 +1,6 @@
 pipeline {
   agent {
-    docker { compose 'test.dockerfile' }
+    docker { image 'python' }
   }
   stages {
     stage('Test') {
