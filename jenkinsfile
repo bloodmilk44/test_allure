@@ -1,5 +1,5 @@
 pipeline {
-    agent { dockerfile true }
+    agent { test.dockerfile true }
     stages {
         stage('Test') {
             steps {
