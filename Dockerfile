@@ -1,7 +1,7 @@
 # first stage
 FROM python:latest AS builder
 
-RUN adduser --disabled-password --gecos '' jenkins
+RUN run adduser --gecos "" --disabled-password --quiet jenkins
 USER jenkins
 
 ARG run_env
