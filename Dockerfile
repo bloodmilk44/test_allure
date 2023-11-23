@@ -1,11 +1,14 @@
 # first stage
 FROM python:latest AS builder
 
+USER $USER
+RUN mkdir -p /home
+USER $CONTAINER_USER_ID
+
 ARG run_env
 ENV env $run_env
 
-RUN mkdir -p /home
-USER jenkins
+
 WORKDIR /home/space_x_api_autotest
 
 COPY . .
