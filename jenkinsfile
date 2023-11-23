@@ -2,7 +2,6 @@ pipeline {
     agent { dockerfile true }
     environment {
                 HOME = "${env.WORKSPACE}"
-                run adduser --gecos "" --disabled-password --quiet jenkins
             }
     stages {
         stage('Test') {
@@ -12,4 +11,13 @@ pipeline {
             }
         }
     }
+    steps {
+    script {
+        wrap([$class: 'Jenkins']) {
+
+            var name = "${Jenkins}"
+        }
+    }
+}
+
 }
