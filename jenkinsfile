@@ -1,5 +1,5 @@
 pipeline {
-    agent { test.dockerfile true }
+    agent { Dockerfile true }
     environment {
                 HOME = "${env.WORKSPACE}"
             }
