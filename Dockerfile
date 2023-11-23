@@ -1,9 +1,8 @@
 # first stage
 FROM python:latest AS builder
 
-USER $USER
-RUN mkdir -p /home
-USER $CONTAINER_USER_ID
+RUN adduser --disabled-password --gecos '' jenkins
+USER jenkins
 
 ARG run_env
 ENV env $run_env
