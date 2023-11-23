@@ -5,6 +5,7 @@ ARG run_env
 ENV env $run_env
 
 RUN mkdir -p /home
+USER jenkins
 WORKDIR /home/space_x_api_autotest
 
 COPY . .
